@@ -11,10 +11,6 @@ module S3SwfUpload
         file = File.open(filename)
         config = YAML.load(file)[Rails.env]
 
-        if config == nil
-          raise "Could not load config options for #{Rails.env} from #{filename}."
-        end
-
         @@access_key_id     = ENV['AMAZON_ACCESS_KEY_ID']        || config['access_key_id']
         @@secret_access_key = ENV['AMAZON_SECRET_ACCESS_KEY']    || config['secret_access_key']
         @@bucket            = ENV['AMAZON_S3_SWF_UPLOAD_BUCKET'] || config['bucket']
