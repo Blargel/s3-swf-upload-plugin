@@ -12,7 +12,7 @@ AMAZON_S3_SWF_MAX_FILE_SIZE
 
 AMAZON_S3_SWF_UPLOAD_ACL
 
-The max file size defaults to 10MB and the ACL defaults to private. If you are missing any other information, an error will be raised. If you want to use this for production without Heroku, be sure to set the environmental variable, RACK_ENV, to "production". Heroku has this by default so if you are using it, you won't need to worry about that.
+If you are missing any information, an error will be raised prompting you to fill in the variables or creating a YML file.
 
 h2. Description
 
