@@ -1,5 +1,21 @@
 h1. S3SwfUpload Gem For Rails 3
 
+This is a quick edit of nathancolgate's S3SwfUpload Gem that works with Heroku. All you need to do is use <code>heroku config:add</code> to add the following environmental variables into your Heroku app:
+
+AMAZON_ACCESS_KEY_ID
+
+AMAZON_SECRET_ACCESS_KEY
+
+AMAZON_S3_SWF_UPLOAD_BUCKET
+
+AMAZON_S3_SWF_MAX_FILE_SIZE
+
+AMAZON_S3_SWF_UPLOAD_ACL
+
+The max file size defaults to 10MB and the ACL defaults to private. If you are missing any other information, an error will be raised. If you want to use this for production without Heroku, be sure to set the environmental variable, RACK_ENV, to "production". Heroku has this by default so if you are using it, you won't need to worry about that.
+
+h2. Description
+
 S3SwfUpload allows user to upload a file to S3 directly, so you can save the cost of uploading process in your app server.
 
 The flex application in this fork was completely re-written so that there are no flash or flex UI components.  The one exception to that is the browse button, which, for security purposes MUST be flash. But even then, you get to pass the URLs for images to use for that button!
